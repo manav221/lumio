@@ -19,12 +19,12 @@ app.use(cors({
     credentials: true
 }));
 
-app.use(epxress.static("/public"));
+app.use(epxress.static("./public"));
 
 app.use("/api/auth", authRouter);
 app.use("/api/chats", chatRouter);
-app.use("*name", (req, res) => {
-    res.sendFile(path.join(__dirname + ".." + "/public/index.html"));
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, "../public", "index.html"));
 })
 
 app.use(errorHandler);

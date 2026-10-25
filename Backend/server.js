@@ -8,6 +8,6 @@ connectToDB();
 const httpServer = createServer(app);
 initSocket(httpServer);
 
-httpServer.listen(() => {
+httpServer.listen(3000, () => {
     console.log("server is running on port 3000");
 })
